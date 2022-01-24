@@ -1,19 +1,25 @@
 .score-board {
     width: 35.6rem;
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
     margin-top: 0.5rem;
 }
 
-.score-board div{
-    color: #fff;
-    text-align: center;
-    font-size: 2rem;
-    padding: 0.5rem;
+.score-board .score-line{
+    padding: 1rem 0;
+    width: 50%;
     font-weight: bold;
     background-color: #4781DD;
+    opacity: 75%;
+    height: 4rem;
+    border: 0.3rem solid #4781DD;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.score-board div:first-child{
+.score-board .score-line.score-X{
+    border-color: #C00000;
     background-color: #C00000;
+    margin-right: 0.5rem;
 }
