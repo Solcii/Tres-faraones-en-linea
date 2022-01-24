@@ -48,7 +48,14 @@ const App = () => {
 
   const endGame = (result, winningPositions) => {
     setTurn(null);
+    if(result !== null){
+      setScore({
+        ...score,
+        [result]: score[result] + 1,
+      })
+    }
 
+    
   }
 
 
