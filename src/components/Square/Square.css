@@ -1,0 +1,22 @@
+.square {
+    width: 10rem;
+    height: 10rem;
+    background-color: #C19666;
+    opacity: 50%;
+    margin: 0.5rem;
+    transition: all 0.2s;
+    border-radius: 0%;
+    clip-path: polygon(36% 0, 0 0, 0 29%, 0 57%, 0 100%, 30% 100%, 73% 100%, 100% 100%, 100% 59%, 100% 31%, 100% 0, 74% 0);
+}
+
+.square--X {
+    background-color: #C00000;
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    opacity: 100%;
+}
+
+.square--O{
+    background-color: #4781DD;
+    border-radius: 50%;
+    opacity: 100%;
+}

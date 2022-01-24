@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: column;
     background-color: #FDE8AF;
+    opacity: 70%;
+    border: 0.8rem solid #C19666;
+    padding: 0.5rem;
 }
 
 .row{
