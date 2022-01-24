@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import Board from './components/Board/Board';
 
 const App = () => {
   const [turn, setTurn] = useState('X');
@@ -12,7 +13,7 @@ const App = () => {
 
   return (
     <div className="container">
-      
+      <Board squares={squares} />
     </div>
   );
 }
