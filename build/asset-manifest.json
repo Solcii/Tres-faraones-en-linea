@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4d63e9cb.css",
+    "main.js": "/static/js/main.77f8a09e.js",
+    "static/js/787.61de4f96.chunk.js": "/static/js/787.61de4f96.chunk.js",
+    "static/media/tumba-faraon.jpg": "/static/media/tumba-faraon.d979c4ba366ddf6adbe9.jpg",
+    "static/media/tumba-faraon-mobile.jpg": "/static/media/tumba-faraon-mobile.30c610c7d1ba7bc1cf43.jpg",
+    "static/media/faraon.jpg": "/static/media/faraon.2421db8b5e04559d125f.jpg",
+    "static/media/escarabajo.png": "/static/media/escarabajo.8196772c296774f95ad2.png",
+    "index.html": "/index.html",
+    "main.4d63e9cb.css.map": "/static/css/main.4d63e9cb.css.map",
+    "main.77f8a09e.js.map": "/static/js/main.77f8a09e.js.map",
+    "787.61de4f96.chunk.js.map": "/static/js/787.61de4f96.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4d63e9cb.css",
+    "static/js/main.77f8a09e.js"
+  ]
+}
