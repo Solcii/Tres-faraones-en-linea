@@ -14,3 +14,7 @@
     background-color: #3D70C2;
     border-color: #3D70C2;
 }
+
+.modal-body .button{
+    align-self: flex-end;
+}

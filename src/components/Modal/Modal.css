@@ -1,4 +1,37 @@
 .modal-container {
     position: relative;
     padding: 2rem;
+    background-color: #FDE8AF;
+    border: 0.4rem solid #FFBE1A;
+    width: 70rem;
+    height: 25rem;
+}
+
+.pharaoh {
+    background-image: url(../../images/faraon.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 15rem;
+    width: 25%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0, 25%);
+}
+
+.modal-body {
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2.5rem;
+    line-height: 2.2rem;
+    text-align: justify;
+    padding: 1rem;
+    margin: 2rem;
+    width: 70%;
+    height: 18rem;
 }

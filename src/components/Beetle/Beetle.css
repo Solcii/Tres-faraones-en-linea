@@ -7,3 +7,11 @@
     height: 4rem;
     margin: 0 1rem;
 }
+
+.modal-container .beetle{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    width: 7rem;
+}

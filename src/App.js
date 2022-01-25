@@ -73,7 +73,6 @@ const App = () => {
     <div className="container">
       <Board winningSquares={winningSquares} turn={turn} squares={squares} onClick={handleClick}/>
       <ScoreBoard scoreO={score.O} scoreX={score.X}/>
-      <Modal />
     </div>
   );
 }
