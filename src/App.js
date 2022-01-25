@@ -22,6 +22,7 @@ const winningPositions = [
 const App = () => {
   const [gameMenu, setGameMenu] = useState(true);
   const [gameOn, setGameOn] = useState(true);
+  const [modalOn, setModalOn] = useState(true);
   const [turn, setTurn] = useState('X');
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [winningSquares, setWinningSquares] = useState([]);
@@ -66,11 +67,21 @@ const App = () => {
 
   const handleGameOn = () =>{
     setGameOn(!gameOn);
+    modalChangeClass();
   }
 
   const finishGame = () =>{
     startGame();
     handleGameOn();
+    setModalOn(true);
+    setScore({
+      X:0,
+      O:0,
+    });
+  }
+
+  const modalChangeClass = () => {
+    setModalOn(!modalOn)
   }
 
   const endGame = (result, winningPositions) => {
@@ -80,6 +91,9 @@ const App = () => {
         ...score,
         [result]: score[result] + 1,
       })
+      if(score[result] === 2){
+        setTimeout(modalChangeClass, 2000);
+      }
      
     }
 
@@ -87,18 +101,19 @@ const App = () => {
     setTimeout(reset, 2000);    
   }
 
-  const reglas = 'El primer jugador coloca la ficha en cualquiera de los casilleros del tablero. El segundo hará lo mismo con su primera ficha. Se continúa las otras jugadas respetando los turnos, si el jugador consigue alinear tres marcas del mismo tipo, ese jugador hace ¡TA – TE – TI! Cada vez que gane, el jugador obtiene un escarabajo para el Faraón ¡Consigue tres escarabajos para convertirte en el campeón!'
+  const reglas = 'El primer jugador coloca la ficha en cualquiera de los casilleros del tablero. El segundo hará lo mismo con su primera ficha. Se continúa las otras jugadas respetando los turnos, si el jugador consigue alinear tres marcas del mismo tipo, ese jugador hace ¡TA – TE – TI! Cada vez que gane, el jugador obtiene un escarabajo para el Faraón ¡Consigue tres escarabajos para convertirte en el campeón!';
+  const winner_text = 'Has conseguido tres escarabajos para el Faraón, ¡Eres el nuevo campeón de egipto!'
 
 
   return (
     <div className="container">
 
       {gameMenu ? <div className='menu-container'><div className='beetle-container'><Beetle/><Beetle/></div><Title/><Button onClick={startGame} buttonTextContent={'INICIAR JUEGO'}/></div> 
-      : gameOn ? <Modal modalTitle={'REGLAS DEL JUEGO:'} modalText={reglas} onClick={handleGameOn} buttonTextContent={'Entendido'}/> :
+      : gameOn ? <Modal modalStatus={modalOn} modalTitle={'REGLAS DEL JUEGO:'} modalText={reglas} onClick={handleGameOn} buttonTextContent={'Entendido'}/> :
       <>
       <Board winningSquares={winningSquares} turn={turn} squares={squares} onClick={handleClick}/>
       <ScoreBoard scoreO={score.O} scoreX={score.X}/>
-      <Button onClick={finishGame} buttonTextContent={'Volver a inicio'}/></>}
+      <Modal modalStatus={modalOn} modalTitle={`¡Felicitaciones jugador ${turn}!`} modalText={winner_text} onClick={finishGame} buttonTextContent={'Volver a inicio'}/></>}
     </div>
   );
 }

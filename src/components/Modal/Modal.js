@@ -2,9 +2,10 @@ import Button from '../Button/Button'
 import './Modal.css'
 import Beetle from '../Beetle/Beetle'
 
-const Modal = ({onClick, modalTitle, modalText, buttonTextContent}) => {
+const Modal = ({modalStatus, onClick, modalTitle, modalText, buttonTextContent}) => {
+    const modalClasses = `modal-container ${modalStatus}`
     return (
-        <div className='modal-container'>
+        <div className={modalClasses}>
             <Beetle />
             <div className='pharaoh'></div>
             <div className='modal-body'>

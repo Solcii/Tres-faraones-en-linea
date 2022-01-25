@@ -8,6 +8,15 @@
     border-radius: 1.5rem;
 }
 
+.modal-container.true {
+    display: block;
+    position: absolute;
+}
+
+.modal-container.false {
+    display: none;
+}
+
 .pharaoh {
     background-image: url(../../images/faraon.jpg);
     background-position: center;
@@ -18,7 +27,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(-9%, 17%);
+    transform: translate(-9%, 6%);
 }
 
 .modal-body {
