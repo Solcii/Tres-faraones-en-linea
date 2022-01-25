@@ -1,11 +1,11 @@
 .button {
     color: #fff;
     background-color: #4781DD;
-    border: 0.1 solid #4781DD;
-    border-radius: 1rem;
-    padding: 0.5rem 2rem;
+    border: 0.1rem solid #4781DD;
+    border-radius: 5rem;
+    padding: 0.5rem 3rem;
     margin: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0rem 1.9rem 3.8rem, rgba(0, 0, 0, 0.22) 0rem 1.5rem 1.2rem;
     font-size: 2rem;
     cursor: pointer;
 }

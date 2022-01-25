@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Board from './components/Board/Board';
+import Modal from './components/Modal/Modal';
 import ScoreBoard from './components/ScoreBoard/ScoreBoard';
 
 const winningPositions = [
@@ -62,6 +63,7 @@ const App = () => {
         [result]: score[result] + 1,
       })
     }
+
     setWinningSquares(winningPositions);
     setTimeout(reset, 2000);    
   }
@@ -71,6 +73,7 @@ const App = () => {
     <div className="container">
       <Board winningSquares={winningSquares} turn={turn} squares={squares} onClick={handleClick}/>
       <ScoreBoard scoreO={score.O} scoreX={score.X}/>
+      <Modal />
     </div>
   );
 }
