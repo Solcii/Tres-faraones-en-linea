@@ -23,6 +23,7 @@ const App = () => {
   const [gameMenu, setGameMenu] = useState(true);
   const [gameOn, setGameOn] = useState(true);
   const [modalOn, setModalOn] = useState(true);
+  const [winner, setWinner] = useState(null)
   const [turn, setTurn] = useState('X');
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [winningSquares, setWinningSquares] = useState([]);
@@ -93,6 +94,7 @@ const App = () => {
       })
       if(score[result] === 2){
         setTimeout(modalChangeClass, 2000);
+        setWinner(result);
       }
      
     }
@@ -102,7 +104,7 @@ const App = () => {
   }
 
   const reglas = 'El primer jugador coloca la ficha en cualquiera de los casilleros del tablero. El segundo hará lo mismo con su primera ficha. Se continúa las otras jugadas respetando los turnos, si el jugador consigue alinear tres marcas del mismo tipo, ese jugador hace ¡TA – TE – TI! Cada vez que gane, el jugador obtiene un escarabajo para el Faraón ¡Consigue tres escarabajos para convertirte en el campeón!';
-  const winner_text = 'Has conseguido tres escarabajos para el Faraón, ¡Eres el nuevo campeón de egipto!'
+  const winner_text = 'Has conseguido tres escarabajos para el Faraón, ¡Eres el nuevo campeón de Egipto!'
 
 
   return (
@@ -113,7 +115,7 @@ const App = () => {
       <>
       <Board winningSquares={winningSquares} turn={turn} squares={squares} onClick={handleClick}/>
       <ScoreBoard scoreO={score.O} scoreX={score.X}/>
-      <Modal modalStatus={modalOn} modalTitle={`¡Felicitaciones jugador ${turn}!`} modalText={winner_text} onClick={finishGame} buttonTextContent={'Volver a inicio'}/></>}
+      <Modal modalStatus={modalOn} modalTitle={`¡Felicitaciones jugador ${winner}!`} modalText={winner_text} onClick={finishGame} buttonTextContent={'Volver a inicio'}/></>}
     </div>
   );
 }
