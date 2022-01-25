@@ -87,12 +87,14 @@ const App = () => {
     setTimeout(reset, 2000);    
   }
 
+  const reglas = 'El primer jugador coloca la ficha en cualquiera de los casilleros del tablero. El segundo hará lo mismo con su primera ficha. Se continúa las otras jugadas respetando los turnos, si el jugador consigue alinear tres marcas del mismo tipo, ese jugador hace ¡TA – TE – TI! Cada vez que gane, el jugador obtiene un escarabajo para el Faraón ¡Consigue tres escarabajos para convertirte en el campeón!'
+
 
   return (
     <div className="container">
 
       {gameMenu ? <div className='menu-container'><div className='beetle-container'><Beetle/><Beetle/></div><Title/><Button onClick={startGame} buttonTextContent={'INICIAR JUEGO'}/></div> 
-      : gameOn ? <Modal onClick={handleGameOn} buttonTextContent={'Entendido'}/> :
+      : gameOn ? <Modal modalTitle={'REGLAS DEL JUEGO:'} modalText={reglas} onClick={handleGameOn} buttonTextContent={'Entendido'}/> :
       <>
       <Board winningSquares={winningSquares} turn={turn} squares={squares} onClick={handleClick}/>
       <ScoreBoard scoreO={score.O} scoreX={score.X}/>
