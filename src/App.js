@@ -23,7 +23,8 @@ const App = () => {
   const [gameMenu, setGameMenu] = useState(true);
   const [gameOn, setGameOn] = useState(true);
   const [modalOn, setModalOn] = useState(true);
-  const [winner, setWinner] = useState(null)
+  const [winner, setWinner] = useState(null);
+  const [activeSquare, setActiveSquare] = useState(true);
   const [turn, setTurn] = useState('X');
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [winningSquares, setWinningSquares] = useState([]);
@@ -56,10 +57,12 @@ const App = () => {
   }
 
   const handleClick = square => {
-    let newSquares = [...squares];
-    newSquares.splice(square, 1, turn);
-    setSquares(newSquares);
-    checkForWinner(newSquares);
+    if(activeSquare === true){
+      let newSquares = [...squares];
+      newSquares.splice(square, 1, turn);
+      setSquares(newSquares);
+      checkForWinner(newSquares);
+    }
   }
 
   const startGame = () => {
@@ -79,6 +82,7 @@ const App = () => {
       X:0,
       O:0,
     });
+    setActiveSquare(true);
   }
 
   const modalChangeClass = () => {
@@ -94,6 +98,7 @@ const App = () => {
       })
       if(score[result] === 2){
         setTimeout(modalChangeClass, 2000);
+        setActiveSquare(false);
         setWinner(result);
       }
      
@@ -104,8 +109,8 @@ const App = () => {
   }
 
   const reglas = 'El primer jugador coloca la ficha en cualquiera de los casilleros del tablero. El segundo hará lo mismo con su primera ficha. Se continúa las otras jugadas respetando los turnos, si el jugador consigue alinear tres marcas del mismo tipo, ese jugador hace ¡TA – TE – TI! Cada vez que gane, el jugador obtiene un escarabajo para el Faraón ¡Consigue tres escarabajos para convertirte en el campeón!';
-  const winner_text = 'Has conseguido tres escarabajos para el Faraón, ¡Eres el nuevo campeón de Egipto!'
 
+  const winner_text = 'Has conseguido tres escarabajos para el Faraón, ¡Eres el nuevo campeón de Egipto!'
 
   return (
     <div className="container">
