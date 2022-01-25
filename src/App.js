@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Board from './components/Board/Board';
+import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
 import ScoreBoard from './components/ScoreBoard/ScoreBoard';
 import Title from './components/Title/Title';
@@ -18,6 +19,8 @@ const winningPositions = [
 
 
 const App = () => {
+  const [gameMenu, setGameMenu] = useState(true);
+  const [gameOn, setGameOn] = useState(true);
   const [turn, setTurn] = useState('X');
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [winningSquares, setWinningSquares] = useState([]);
@@ -56,6 +59,19 @@ const App = () => {
     checkForWinner(newSquares);
   }
 
+  const startGame = () => {
+    setGameMenu(!gameMenu);
+  }
+
+  const handleGameOn = () =>{
+    setGameOn(!gameOn);
+  }
+
+  const finishGame = () =>{
+    startGame();
+    handleGameOn();
+  }
+
   const endGame = (result, winningPositions) => {
     setTurn(null);
     if(result !== null){
@@ -63,6 +79,7 @@ const App = () => {
         ...score,
         [result]: score[result] + 1,
       })
+     
     }
 
     setWinningSquares(winningPositions);
@@ -72,8 +89,12 @@ const App = () => {
 
   return (
     <div className="container">
+
+      {gameMenu ? <><Title/><Button onClick={startGame}/></> : gameOn ? <Modal onClick={handleGameOn}/> :
+      <>
       <Board winningSquares={winningSquares} turn={turn} squares={squares} onClick={handleClick}/>
       <ScoreBoard scoreO={score.O} scoreX={score.X}/>
+      <Button onClick={finishGame}/></>}
     </div>
   );
 }

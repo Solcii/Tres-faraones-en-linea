@@ -10,7 +10,9 @@
   background-size: cover;
   background-color: #5a422f;
 }
-
+.test {
+  font-size: 30px;
+}
 /* Diseño Responsive */
 @media (max-width: 768px) {
   .container {
