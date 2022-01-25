@@ -90,11 +90,11 @@ const App = () => {
   return (
     <div className="container">
 
-      {gameMenu ? <><Title/><Button onClick={startGame}/></> : gameOn ? <Modal onClick={handleGameOn}/> :
+      {gameMenu ? <div className='menu-container'><Title/><Button onClick={startGame} buttonTextContent={'INICIAR JUEGO'}/></div> : gameOn ? <Modal onClick={handleGameOn} buttonTextContent={'Entendido'}/> :
       <>
       <Board winningSquares={winningSquares} turn={turn} squares={squares} onClick={handleClick}/>
       <ScoreBoard scoreO={score.O} scoreX={score.X}/>
-      <Button onClick={finishGame}/></>}
+      <Button onClick={finishGame} buttonTextContent={'Volver a inicio'}/></>}
     </div>
   );
 }
