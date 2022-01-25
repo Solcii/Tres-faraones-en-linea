@@ -43,3 +43,11 @@
     50% { border-radius: 0%; }
     100% { border-radius: 50%;}
 }
+
+/* Diseño Responsive */
+@media (max-width: 576px){
+    .square{
+        width: 8rem;
+        height: 8rem;
+    }
+}

@@ -44,3 +44,22 @@
     margin: 2rem;
     height: 18rem;
 }
+
+/* Diseño Responsive */
+@media (max-width: 768px) {
+    .modal-container{
+        max-width: 85%;
+        height: initial;
+    }
+    .pharaoh{
+        display: none;
+    }
+    .modal-body{
+        position: initial;
+        top: 0;
+        left: 0;
+        margin: 1rem;
+        padding: 0;
+        height: initial;
+    }
+  }

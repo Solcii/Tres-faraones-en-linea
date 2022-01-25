@@ -23,3 +23,10 @@
     background-color: #C00000;
     margin-right: 0.5rem;
 }
+
+/* Diseño Responsive */
+@media (max-width: 576px){
+    .score-board{
+        width: 29.6rem;
+    }
+}
