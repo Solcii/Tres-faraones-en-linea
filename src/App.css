@@ -21,6 +21,18 @@
   width: 100%;
 }
 
+.beetle-container{
+  display: flex;
+}
+
+.beetle-container .beetle:first-child {
+  width: 12rem;
+  height: 12rem;
+  align-self: flex-end;
+  -webkit-animation-duration: 2.2s;
+  animation-duration: 2.2s;
+}
+
 /* Diseño Responsive */
 @media (max-width: 768px) {
   .container {

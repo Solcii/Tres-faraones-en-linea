@@ -91,7 +91,7 @@ const App = () => {
   return (
     <div className="container">
 
-      {gameMenu ? <div className='menu-container'><Beetle/><Title/><Button onClick={startGame} buttonTextContent={'INICIAR JUEGO'}/></div> 
+      {gameMenu ? <div className='menu-container'><div className='beetle-container'><Beetle/><Beetle/></div><Title/><Button onClick={startGame} buttonTextContent={'INICIAR JUEGO'}/></div> 
       : gameOn ? <Modal onClick={handleGameOn} buttonTextContent={'Entendido'}/> :
       <>
       <Board winningSquares={winningSquares} turn={turn} squares={squares} onClick={handleClick}/>

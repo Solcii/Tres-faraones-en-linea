@@ -25,10 +25,10 @@
 }
 
 @-webkit-keyframes mover {
-    0% { transform: translateY(50px); }
-    100% { transform: translateY(-50px); }
+    0% { transform: translateY(8rem); }
+    100% { transform: translateY(-5rem); }
 }
 @keyframes mover {
-    0% { transform: translateY(50px); }
-    100% { transform: translateY(-50px); }
+    0% { transform: translateY(8rem); }
+    100% { transform: translateY(-5rem); }
 }
