@@ -3,6 +3,7 @@ import './App.css';
 import Board from './components/Board/Board';
 import Modal from './components/Modal/Modal';
 import ScoreBoard from './components/ScoreBoard/ScoreBoard';
+import Title from './components/Title/Title';
 
 const winningPositions = [
   [0, 1, 2],
