@@ -5,6 +5,7 @@ import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
 import ScoreBoard from './components/ScoreBoard/ScoreBoard';
 import Title from './components/Title/Title';
+import Beetle from './components/Beetle/Beetle';
 
 const winningPositions = [
   [0, 1, 2],
@@ -90,7 +91,8 @@ const App = () => {
   return (
     <div className="container">
 
-      {gameMenu ? <div className='menu-container'><Title/><Button onClick={startGame} buttonTextContent={'INICIAR JUEGO'}/></div> : gameOn ? <Modal onClick={handleGameOn} buttonTextContent={'Entendido'}/> :
+      {gameMenu ? <div className='menu-container'><Beetle/><Title/><Button onClick={startGame} buttonTextContent={'INICIAR JUEGO'}/></div> 
+      : gameOn ? <Modal onClick={handleGameOn} buttonTextContent={'Entendido'}/> :
       <>
       <Board winningSquares={winningSquares} turn={turn} squares={squares} onClick={handleClick}/>
       <ScoreBoard scoreO={score.O} scoreX={score.X}/>
